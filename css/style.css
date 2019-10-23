@@ -1,0 +1,88 @@
+section:hover {
+  transform: rotate3d(1, 1, 1, 360deg);
+}
+section {
+  height: 100px;
+  width: 100px;
+  margin: 100px 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 2s;
+}
+section div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+section .d1 {
+  transform: rotateY(0deg) translateZ(50px);
+  background: burlywood;
+}
+section .d1 div {
+  height: 33%;
+  width: 33%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+}
+section .d2 {
+  transform: rotateY(90deg) translateZ(50px);
+  background: cadetblue;
+}
+section .d2 div {
+  height: 33%;
+  width: 33%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+}
+section .d3 {
+  transform: rotateY(180deg) translateZ(50px);
+  background: chartreuse;
+}
+section .d3 div {
+  height: 33%;
+  width: 33%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+}
+section .d4 {
+  transform: rotateY(270deg) translateZ(50px);
+  background: coral;
+}
+section .d4 div {
+  height: 33%;
+  width: 33%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+}
+section .d5 {
+  transform: rotateX(90deg) translateZ(50px);
+  background: crimson;
+}
+section .d5 div {
+  height: 33%;
+  width: 33%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+}
+section .d6 {
+  transform: rotateX(-90deg) translateZ(50px);
+  background: darkmagenta;
+}
+section .d6 div {
+  height: 33%;
+  width: 33%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+}
