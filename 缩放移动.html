@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <img id="headimg" src="../img/605174396.jpeg" alt="">
+    </div>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: relative;
+            overflow: hidden;
+            margin: 100px auto;
+            height: 300px;
+            width: 300px;
+            border: 1px solid red;
+        }
+        #headimg{
+            position: absolute;
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+    <script>
+        var box=document.getElementById("box");
+        var headimg=document.getElementById("headimg");
+
+        box.onmouseenter=function(e){
+            box.onmousewheel=function(e){
+                if(e.wheelDelta<0)
+                {
+                    headimg.style.height=headimg.offsetHeight*0.9+"px";
+                    headimg.style.width=headimg.offsetWidth*0.9+"px";
+                }
+                else
+                {
+                    headimg.style.height=headimg.offsetHeight*1.1+"px";
+                    headimg.style.width=headimg.offsetWidth*1.1+"px";
+                }
+            }
+
+            box.onmousedown=function(e){
+                mouseX=e.pageX-box.offsetLeft;
+                mouseY=e.pageY-box.offsetTop;
+                imgx=headimg.offsetLeft;
+                imgy=headimg.offsetTop;
+                onmousemove=function(e){
+                    movmouseX=e.pageX-box.offsetLeft;
+                    movmouseY=e.pageY-box.offsetTop;
+                    x=movmouseX-mouseX;
+                    y=movmouseY-mouseY;
+                    headimg.style.left=imgx+x+"px";
+                    headimg.style.top=imgy+y+"px";
+                }
+            }
+        }
+        onmouseup=function(){
+                console.log("起"+headimg.offsetTop);
+                console.log(box.onmousedown);
+                onmousemove=null;
+                console.log(box.onmousedown);
+                // headimg.style.left=headimg.offsetLeft+"px";
+                // headimg.style.top=headimg.offsetTop+"px";
+            }
+    </script>
+</body>
+</html>
