@@ -43,9 +43,9 @@
                     minute.innerText="分数："+ 0;
                     this.snake.direction = "right";
                     this.snake.body = [
-                        {x : 3 , y : 2 , color : "red"},
-                        {x : 2 , y : 2 , color : "blue"},
-                        {x : 1 , y : 2 , color : "blue"},
+                        {x : 3 , y : 2 , color : "red" , src : "url(img/head.png) center"},
+                        {x : 2 , y : 2 , color : "green"},
+                        {x : 1 , y : 2 , color : "green"},
                     ];
                     this.render();
                 }

@@ -12,9 +12,9 @@
         this.direction = options.direction || "right";
         //身体
         this.body=[
-            {x : 3 , y : 2 , color : "red"},
-            {x : 2 , y : 2 , color : "blue"},
-            {x : 1 , y : 2 , color : "blue"},
+            {x : 3 , y : 2 , color : "red" , src : "url(img/head.png) center"},
+            {x : 2 , y : 2 , color : "green"},
+            {x : 1 , y : 2 , color : "green"},
         ];
     }
 
@@ -30,12 +30,18 @@
             element.push(div);
             map.appendChild(div);
             div.style.position = position;
-            div.style.border = "1px solid yellow";
+            div.style.background = object.color;
+            if(i==0)
+            {
+                div.style.background=object.src;
+                div.style.backgroundSize="contain";
+            }
+            // div.style.border = "1px solid yellow";
             div.style.height = this.height + "px";
             div.style.width = this.width + "px";
             div.style.left = object.x * this.width + "px";
             div.style.top = object.y * this.height + "px";
-            div.style.backgroundColor = object.color;
+            // div.style.backgroundColor = object.color;
         }
     }
     //清除蛇

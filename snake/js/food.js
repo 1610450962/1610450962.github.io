@@ -11,7 +11,7 @@
         this.y = options.y || 0;
         this.height = options.height || 20;
         this.width = options.width || 20;
-        this.color = options.color || "green";
+        this.color = options.color || "red";
     }
     //在食物构造函数的原型里添加一个随机添加食物
     Food.prototype.render=function(map){
