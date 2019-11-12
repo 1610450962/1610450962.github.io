@@ -25,36 +25,72 @@
     //移动
     function runSnake(){
 
-        var timeId=setInterval(function(){
-            //蛇移动
-            this.snake.move(this.food,this.map,this.minute);
+        if(document.body.offsetWidth < 760)
+        {
+            var timeId=setInterval(function(){
+                //蛇移动
+                this.snake.move(this.food,this.map,this.minute);
 
-            //判断边界
-            var headX = this.snake.body[0].x;
-            var headY = this.snake.body[0].y;
-            var maxX = this.map.offsetWidth / this.snake.width;
-            var maxY = this.map.offsetHeight / this.snake.height;
-            if(headX < 0 || headX >= maxX || headY < 0 || headY >= maxY)
-            {
-                clearTimeout(timeId);
-                var a = confirm("是否重新开始？");
-                if(a)
+                //判断边界
+                var headX = this.snake.body[0].x;
+                var headY = this.snake.body[0].y;
+                var maxX = this.map.offsetWidth / this.snake.width;
+                var maxY = this.map.offsetHeight / this.snake.height;
+                if(headX < 0 || headX >= maxX || headY < 0 || headY >= maxY)
                 {
-                    minute.innerText="分数："+ 0;
-                    this.snake.direction = "right";
-                    this.snake.body = [
-                        {x : 3 , y : 2 , color : "red" , src : "url(img/head.png) center"},
-                        {x : 2 , y : 2 , color : "green"},
-                        {x : 1 , y : 2 , color : "green"},
-                    ];
-                    this.render();
+                    clearTimeout(timeId);
+                    var a = confirm("是否重新开始？");
+                    if(a)
+                    {
+                        minute.innerText="分数："+ 0;
+                        this.snake.direction = "right";
+                        this.snake.body = [
+                            {x : 3 , y : 2 , color : "red" , src : "url(img/head.png) center"},
+                            {x : 2 , y : 2 , color : "green"},
+                            {x : 1 , y : 2 , color : "green"},
+                        ];
+                        this.render();
+                    }
                 }
-            }
-            else
-            {
-                this.snake.render(this.map);
-            }
-        }.bind(that), 150);
+                else
+                {
+                    this.snake.render(this.map);
+                }
+            }.bind(that), 250);
+        }
+        else
+        {
+            var timeId=setInterval(function(){
+                //蛇移动
+                this.snake.move(this.food,this.map,this.minute);
+
+                //判断边界
+                var headX = this.snake.body[0].x;
+                var headY = this.snake.body[0].y;
+                var maxX = this.map.offsetWidth / this.snake.width;
+                var maxY = this.map.offsetHeight / this.snake.height;
+                if(headX < 0 || headX >= maxX || headY < 0 || headY >= maxY)
+                {
+                    clearTimeout(timeId);
+                    var a = confirm("是否重新开始？");
+                    if(a)
+                    {
+                        minute.innerText="分数："+ 0;
+                        this.snake.direction = "right";
+                        this.snake.body = [
+                            {x : 3 , y : 2 , color : "red" , src : "url(img/head.png) center"},
+                            {x : 2 , y : 2 , color : "green"},
+                            {x : 1 , y : 2 , color : "green"},
+                        ];
+                        this.render();
+                    }
+                }
+                else
+                {
+                    this.snake.render(this.map);
+                }
+            }.bind(that), 150);
+        }
     }
     //键盘控制蛇的方向
     function preKey(button){
