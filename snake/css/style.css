@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#map{
+    position: relative;
+    height: 60%;
+    width: 100%;
+    background: gray;
+}
+#minute{
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 0 10px;
+    border:1px solid ;
+    line-height: 30px;
+}
+@media (min-width: 767px) {
+    #control{
+        display: none;
+    }
+}
+#control{
+    position: relative;
+    height: 40%;
+    width: 100%;
+}
+input[type=button]{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+}
+input.left{
+    top:50%;
+    transform: translateY(-50px);
+    left: 0;
+}
+input.right{
+    top:50%;
+    transform: translateY(-50px);
+    right: 0;
+}
+input.top{
+    top:0;
+    transform: translateX(-50px);
+    left: 50%;
+}
+input.bottom{
+    left:50%;
+    transform: translateX(-50px);
+    bottom: 0;
+}
