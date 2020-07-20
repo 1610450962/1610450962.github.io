@@ -36,7 +36,7 @@
     animation: spin 5s linear infinite;
 }
 .water::after{
-    left: 2.5vw;
+    left: 5vw;
     animation: spin 7s linear infinite;
 }
 
